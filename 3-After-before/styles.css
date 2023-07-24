@@ -1,0 +1,157 @@
+
+/**********************************************************************************
+* ?::after y ::before                                                            *
+* content   Propiedad para generar contenido. Sólo usable en ::before o ::after. *
+* ::before  Aplica los estilos antes del elemento indicado.                      *
+* ::after   Aplica los estilos después del elemento indicado.                    *
+* attr()    Función que hace referencia al atributo HTML indicado.               *
+**********************************************************************************/
+
+/****************************************************************************************
+* !La propiedad content admite parámetros de diverso tipo, incluso concatenando        *
+* información mediante espacios. Podemos utilizar varios tipos de contenido:           *
+*                                                                                      *
+* Añade el contenido de texto indicado.       ||  content: "Contenido:";               *
+* Añade el valor del atributo HTML indicado.  ||  content: attr(href);                 *
+* Añade la imagen indicada en la URL.         ||  content: url(icon.png);              *
+* Añade un gradiente del tamaño indicado.     ||  content: linear-gradient(red, blue); *
+* Define un contador CSS para mostrar.        ||  content: counter(item);              *
+*                                                                                      *
+* !la propiedad content sólo funciona dentro de los pseudoelementos ::before y ::after *
+* No puede utilizarse en otro lugar.                                                   *
+****************************************************************************************/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+/********************************************
+*  !Forma adecuada de dimencionar el body   *
+*  Lo que se hace con el min-heigth es      *
+*  decirle al body que como minimo el alto  *
+*  de la pagina es el 100vh, esto garantiza *
+*  que al haber mas contenido dentro de la  *
+*  pagina esta se extendera sin problema a  *
+*  lo largo del html (raiz)                 *
+*********************************************/
+
+body{
+  width: 100%;
+  min-height: 100vh;
+}
+
+/****************************************************************************************
+* Los pseudoelementos ::before y ::after permiten hacer referencia a «justo antes del  *
+* elemento» y «justo después del elemento», respectivamente.                           *
+*                                                                                      *
+* ::before, el navegador se encargará de añadir contenido antes del inicio de la       *
+* etiqueta de apertura del elemento que has seleccionado                               *
+*                                                                                      *
+* ::after, que permitirá añadir contenido después de la etiqueta de cierre en cuestión *
+****************************************************************************************/
+
+.content{
+  width: 300px;
+  height: 300px;
+  margin: 2rem auto;
+  position: relative;
+  background-color: grey;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  z-index: 1;
+}
+
+/******************
+ * usando ::after *
+ ******************/
+.content__default{
+  width: 150px;
+  height: 150px;
+  border-radius: 50rem;
+  background: radial-gradient(circle at top left, #FBEEE6, #D35400, #6E2C00);
+  position: relative;
+}
+
+.content__default::after{
+  content: ' ';
+  display: block;
+  width: 130px;
+  height: 15px;
+  left: 50%;
+  bottom: 2px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 5px #000000;
+  background-color: #000000;
+  opacity: .6;
+  position: absolute;
+  z-index: -1;
+}
+
+/*******************
+ * usando ::before *
+ *******************/
+.content__default2{
+  width: 150px;
+  height: 150px;
+  border-radius: 50rem;
+  background: radial-gradient(circle at top left, #FBEEE6, #D35400, #6E2C00);
+  position: absolute;
+}
+
+.content__default2::before{
+  content: ' ';
+  position: relative;
+  display: block;
+  width: 150px;
+  height: 150px;
+  left: 10%;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 5px #000000;
+  background-color: #000;
+  opacity: .4;
+  z-index: -1;
+}
+
+ /*********************************
+  *  usando ::before & :: after   *
+  *********************************/
+ .content__default3{
+  width: 150px;
+  height: 150px;
+  border-radius: 50rem;
+  background: radial-gradient(circle at top left, #FBEEE6, #D35400, #6E2C00);
+  position: relative;
+}
+
+.content__default3::before{
+  content: ' Before ';
+  position: absolute;
+  display: block;
+  width: 150px;
+  height: 150px;
+  left: 45%;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 5px #e97b7b;
+  background-color: #5906f5;
+  opacity: 1;
+}
+
+.content__default3::after{
+  content: ' After ';
+  position: absolute;
+  display: block;
+  width: 150px;
+  height: 150px;
+  right: 45%;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 5px #5755e7;
+  background-color: #dd991a;
+  opacity: 1;
+}

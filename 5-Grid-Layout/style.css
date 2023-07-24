@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: antiquewhite;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  font-weight: 900;
+  text-align: center;
+  text-shadow: 2px  2px 5px indigo;
+  text-transform: uppercase;
+}
+
+a{
+  font-weight: 700;
+  width: 30%;
+  text-shadow: 1px 1.5px 1.5px black;
+  background-color: rgba(226, 101, 43, 0.568);
+  color: indigo;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+/*
+  grid-template-columns	[col1] [col2] ...	Establece el tamaño de cada columna
+  grid-template-rows	[fila1] [fila2] ...	Establece el tamaño de cada fila
+*/
+.grid-layout{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 80%;
+  margin: 0 auto;
+  background-color: lightgreen;
+  padding: 1.2rem;
+  border: 1px solid black;
+}
+
+.caja{
+  border: 4px dotted indigo;
+  text-align: center;
+  line-height: 150px;
+}
+
+/*
+  grid-colunm: indica cuantas columnas ocupara el componente hijo dentro de la cuadricula grid
+  grid-column-start:	Indica en que columna empezará el ítem de la cuadrícula.
+  grid-column-end:	Indica en que columna terminará el ítem de la cuadrícula.
+  grid-row: indica cuantas filas ocupara el componente hijo dentro de la cuadricula grid
+  grid-row-start:	Indica en que fila empezará el ítem de la cuadrícula.
+  grid-row-end:	Indica en que fila terminará el ítem de la cuadrícula.
+*/
+.c1{
+  grid-column: 1/4; 
+  background-color: greenyellow;
+  /* ocupara desde la linea 1 hasta la linea 4 del grid */
+  /* ocupando el 100% de la 1ra fila del grid */
+}
+
+.c2{
+  /* definicion explicita del ejercicio anterior */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: green;
+}
+
+.c4{
+  grid-row: 3 / span 3;
+  background-color: azure;
+  /* indicamos al igual que con las columnas en este caso las filas */
+  /* cuandas lineas de la grid van a ocupar el elemento hijo de la grid */
+}
+
+.c5{
+  grid-column: 2 / span 2;
+  background-color: aquamarine;
+  /* indicamos que  empiece desde la linea 2 y se espanda 2 lineas mas
+    de esta manera es como decir 2/4
+  */
+}
+

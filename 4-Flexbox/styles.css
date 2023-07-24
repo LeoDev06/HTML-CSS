@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: beige;
+}
+
+p{
+  margin: 10px;
+  padding: 5px;
+  border: 3px dashed indigo;
+  color: purple;
+  background-color: aliceblue;
+  font-weight: 600;
+  text-shadow: 1px 3px 4px indigo;
+}
+
+.flex-container {
+  display: flex;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: #ccc;
+  padding: 20px;
+  flex-direction: row;
+}
+
+.caja {
+  border: 1px solid rgb(128, 128, 128);
+  background-color: white;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+}
+
+/* 
+  usando flex-flow que permite convinar flex-direction con felx-wrap
+  al reducir la ventana a dispositivo movil re re organizan los elementos 
+  gracias a la propiedad wrap-reverse
+*/
+.flex-container2 {
+  background-color: crimson;
+  border: 1px solid rgb(0, 0, 0);
+  display: flex;
+  flex-flow: row wrap-reverse;
+  padding: 20px;
+}
+
+.caja2 {
+  border: 1px solid rgb(128, 128, 128);
+  background-color: white;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+}
+
+/*
+  justify-content: Se utiliza para alinear los ítems del eje principal (por defecto, el horizontal).
+  align-items: Usada para alinear los ítems del eje secundario (por defecto, el vertical).
+  align-content: Se utiliza para alinear el contenido del eje secundario entre líneas (sólo en contenedor multilinea).
+  Flex-multilinea: creado mediante flex-wrap tipo de contenedor en el que, cuando los ítems no caben en el ancho disponible, 
+  el eje principal se divide en múltiples líneas.
+  */
+.flex-container3 {
+  background-color: chocolate;
+  border: 1px solid rgb(0, 0, 0);
+  display: flex;
+  flex-flow: row wrap;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+  align-content: space-evenly;
+  height: 300px;
+}
+
+.caja3 {
+  border: 1px solid rgb(128, 128, 128);
+  background-color: white;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+/*
+  flex-basis: Tamaño base de los ítems antes de aplicar una variación.
+
+  flex-grow: Número que indica el factor de crecimiento del ítem (si no ocupa el 100% del padre).
+  en otras palabras aumenta el tamaño del elemento hasta que complete el 100% del ancho del padre
+
+  flex-shrink: Número que indica el factor de decrecimiento del ítem (si ocupa el 100% del padre).
+  en otras palabras disminuye el tamaño del elemento evitando que se desbordedel ancho maximo del padre
+  */
+.flex-container4{
+  display: flex;
+  border: 1px solid rgb(166, 44, 177);
+  background-color: #ccc;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.id1{
+  background-color: blueviolet;
+  order: 3;
+  flex-grow: 0;
+}
+
+.id2{
+  background-color: violet;
+  order: 1;
+  flex-grow: 0;
+}
+
+.id3{
+  background-color: indigo;
+  order: 2;
+  flex-grow: 9;
+}
+

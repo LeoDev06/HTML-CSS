@@ -1,0 +1,61 @@
+:root{
+  font-size: 10px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main{
+  width: 40rem;
+  height: 40rem;
+  position: relative;
+  margin: 3rem auto;
+  z-index: 1;
+  background-color: lemonchiffon;
+}
+
+.main__child{
+  width: 15rem;
+  height: 15rem;
+  position: relative;
+  top: 30%;
+  left: 30%;
+  background: #8E44AD;
+  cursor: pointer;
+  transition-property: background, top;
+  transition-duration: 2s;
+  transition-timing-function: ease-out;
+  transition-delay: 100ms;
+  /**************************************************
+   * tambien se puede resumir de la siguente manera *
+   *  transition: all 2s ease-in-out 1s;            *
+   **************************************************/
+}
+
+.main__child:hover{
+  top: 50%;
+  background: #4A235A;
+}
+
+.main__child::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  left: 4%;
+  top: 4%;
+  background: rgba(0, 0, 0, .25);
+  z-index: -1;
+  opacity: .6;
+}

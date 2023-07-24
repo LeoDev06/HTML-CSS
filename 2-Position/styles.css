@@ -1,0 +1,84 @@
+
+/*************************************************************************************************
+ * ?POSICIONAMIENTOS                                                                              *
+ * static                                                                                        *
+ * Posicionamiento estático. Utiliza el orden natural de los elementos HTML.                     *
+ * relative                                                                                      *
+ * Posicionamiento relativo. Los elementos se mueven ligeramente en base a su posición estática. *
+ * absolute                                                                                      *
+ * Posicionamiento absoluto. Los elementos se colocan en base al contenedor padre.               *
+ * fixed                                                                                         *
+ * Posicionamiento fijo. Idem al absoluto, pero aunque hagamos scroll no se mueve.               *
+ * sticky                                                                                        *
+ * Posicionamiento «pegado». Similar al relativo, usado para pegar menús a la parte superior.    *
+ *************************************************************************************************/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/***********************************************************************************************
+ * ?POSICIONAMIENTO ABSOLUTO                                                                   *
+ * Este tipo de posicionamiento coloca los elementos utilizando como punto de origen el primer *
+ * contenedor con posicionamiento diferente a estático.                                        *
+ * Por ejemplo, si el contenedor padre tiene posicionamiento estático, pasamos a mirar el      *
+ * posicionamiento del padre del contenedor padre, y así sucesivamente hasta encontrar un      *
+ * contenedor con posicionamiento no estático o llegar a la etiqueta <body>, en el caso que    *
+ * se comportaría como el ejemplo anterior.                                                    *
+ ***********************************************************************************************/
+
+.contenedor_padre{
+  width: 400px;
+  height: 400px;
+  border: 1px dotted lightpink;
+  background-color: blueviolet;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  z-index: 1;
+}
+
+/**********************************************************************************************
+ * ?POSICIONAMIENTO RELATIVO                                                                  *
+ * Si utilizamos la palabra clave relative activaremos el modo de posicionamiento relativo,   *
+ * que es el más sencillo de todos. En este modo, los elementos se colocan exactamente igual  *
+ * que en el posicionamiento estático (permanecen en la misma posición), pero dependiendo del *
+ * valor de las propiedades top, bottom, left o right variaremos ligeramente la posición del  *
+ * elemento.                                                                                  *
+ **********************************************************************************************/
+ 
+.contenedor_hijo{
+  width: 200px;
+  height: 200px;
+  position: relative;
+  left: 25%;
+  top: 25%;
+  background: radial-gradient(at top left, rgb(117, 85, 139), rgb(89, 27, 133), indigo);
+  transition: all 1.5s ease-in-out;
+  cursor: pointer;
+}
+
+.contenedor_hijo::before{
+  content: '';
+  display: block;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 2%;
+  top: 3%;
+  background-color: rgba(26, 26, 27, 50%);
+  box-shadow: 0 0 10px 5px rgba(26, 26, 27, 50%);
+  z-index: -1;
+}
+
+.contenedor_padre:hover .contenedor_hijo{
+  top: 50%;
+  background: radial-gradient(at top left, indigo, rgb(89, 27, 133), rgb(117, 85, 139) );
+}

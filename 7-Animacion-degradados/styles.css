@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  min-height: 100vh;
+}
+
+section{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #E59866, #D35400, #873600);
+  background-size: 400% 400%;
+  position: relative;
+  animation: cambiar 2s ease-out infinite;
+}
+
+h1{
+  font-size: 3rem;
+  letter-spacing: 2px;
+  border: 3px solid #fff;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* animacion */
+@keyframes cambiar{
+  0%{background-position: 0 50%;}
+  50%{background-position: 100% 50%;}
+  100%{background-position: 0 50%;}
+}

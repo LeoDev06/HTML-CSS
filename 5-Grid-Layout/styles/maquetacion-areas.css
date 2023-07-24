@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: antiquewhite;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 900;
+  text-align: center;
+  text-shadow: 2px 2px 5px indigo;
+  text-transform: uppercase;
+}
+
+.btn-navegacion{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  font-weight: 700;
+  width: 20%;
+  text-shadow: 1px 1.5px 1.5px black;
+  background-color: rgba(226, 101, 43, 0.568);
+  color: indigo;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+/*
+  Definicion por grid tempalte areas
+  Mediante los Grids por área es posible indicar el nombre y posición concreta de cada área 
+  de una cuadrícula. Para ello utilizaremos la propiedad grid-template-areas en nuestro contenedor 
+  padre, donde debemos especificar el orden de las áreas en la cuadrícula. Posteriormente, en cada 
+  ítem hijo, utilizamos la propiedad grid-area para indicar el nombre del área del que se trata y 
+  que el navegador pueda identificarlas
+*/
+.grid-layout {
+  display: grid;
+  grid-template-areas:
+    "cabecera cabecera"
+    "menu menu"
+    "contenido lateral"
+    "footer footer"
+  ;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 20% 10% 60% auto;
+
+
+  width: 80%;
+  height: 650px;
+  background-color: lightgreen;
+  border: 1px solid black;
+}
+
+.caja {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px dotted indigo;
+  text-align: center;
+  padding: 20px;
+}
+
+.c1{
+  background-color: #FFE4C4;
+  grid-area: cabecera;
+}
+
+.c2{
+  background-color: #DEB887;
+  grid-area: menu;
+}
+
+.c3{
+  background-color: #E9967A;
+  grid-area: contenido;
+}
+
+.c4{
+  background-color: #FF7F50;
+  grid-area: lateral;
+}
+
+.c5{
+  background-color: #D2691E;
+  grid-area: footer;
+}

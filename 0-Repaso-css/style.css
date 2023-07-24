@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body{
+  background-color: antiquewhite;
+  font-family: 'Poppins', sans-serif;
+}
+
+#container{
+  margin: 0px auto;
+  text-align: center;
+  width: 100%;
+}
+
+header{
+  background-color: brown;
+  color: aliceblue;
+  line-height: auto 0;
+  text-shadow: 1px 3px 4px black;
+  width: 100%;
+}
+
+nav{
+  background-color: aliceblue;
+  height: 50px;
+  border-bottom: 1px solid black;
+}
+
+nav ul li{
+  float: left;
+  margin: 10px;
+  line-height: 25px;
+}
+
+/* evita que el contenido despues del nav se flote */
+.clearfix{
+  clear: both;
+}
+
+#content{
+  float: left;
+  width: calc(70% - 40px);
+  min-height: 420px;
+  background-color: rgb(150, 106, 53);
+  padding: 0 20px;
+}
+
+.article h2{
+  color: white;
+  margin: 15px 0;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+
+.article p{
+  color: white;
+  margin: 15px 0;
+  padding-bottom: 10px;
+}
+
+body aside{
+  float: left;
+  /* 
+    calcula el ancho del componente para poder agregar un paddin
+    sin que se desborde el contenido 
+  */
+  width: calc(30% - 20px);
+  background-color: rgb(226, 141, 61);
+  padding: 10px;
+}
+
+footer{
+  background-color: chocolate;
+  color: aliceblue;
+  padding: 4rem;
+}
